@@ -26,7 +26,8 @@ function App() {
         <ul>
           <li>When? February 20th - 21st</li>
           <li>Where? Rice Hall | 85 Engineers Way, Charlottesville, VA, 22903</li>
-        </ul>      </section>
+        </ul>      
+      </section>
 
     </div>
     // ending div
