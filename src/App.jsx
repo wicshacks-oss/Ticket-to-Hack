@@ -24,7 +24,7 @@ function App() {
       <section className="info-section">
         <h2>About the Event</h2>
         <ul>
-          <li>When? February 20th - 21st</li>
+          <li>When? February 20th - 21st 2027</li>
           <li>Where? Rice Hall | 85 Engineers Way, Charlottesville, VA, 22903</li>
         </ul>      
       </section>
