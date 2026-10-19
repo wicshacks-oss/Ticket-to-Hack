@@ -2,6 +2,7 @@ import { useState } from 'react'
 import heroImg from './assets/hero.png'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
+import myLogo from './assets/logo.png'
 import './App.css'
 
 function App() {
@@ -10,8 +11,8 @@ function App() {
     <div>
       
       {/* Main Header */}
-      <h1>Ticket to Hack</h1>
-
+      <img src={myLogo} alt="Ticket to Hack" className="main-logo" />
+      
       {/* "Mission statement" about the event */}
       <section className="mission-statement-section">
         <h2>Hackathon Mission</h2>
