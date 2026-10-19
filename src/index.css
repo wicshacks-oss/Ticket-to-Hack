@@ -30,6 +30,21 @@
   }
 }
 
+/* CSS for background image (blue sky) */
+#root {
+  max-width: 100%;
+  text-align: center;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  
+  background-image: url('./assets/blue-sky.png'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --text: #9ca3af;
