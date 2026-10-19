@@ -201,3 +201,10 @@
   list-style: none;
   padding: 0;
 }
+/* css for ticket to hack logo */
+.main-logo {
+  width: 80%;
+  max-width: 500px; 
+  height: auto;
+  margin: 32px auto; 
+}
