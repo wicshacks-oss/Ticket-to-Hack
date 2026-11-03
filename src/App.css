@@ -202,9 +202,13 @@
   padding: 0;
 }
 /* css for ticket to hack logo */
+/* new space to trigger event */
+
 .main-logo {
   width: 90%;
   max-width: 500px; 
   height: auto;
   margin: 32px auto; 
 }
+
+
