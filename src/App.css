@@ -202,9 +202,95 @@
   padding: 0;
 }
 /* css for ticket to hack logo */
+/* new space to trigger event */
+
 .main-logo {
   width: 90%;
   max-width: 500px; 
   height: auto;
   margin: 32px auto; 
 }
+
+/* Container styling */
+.countdown-section {
+  text-align: center;
+  margin: 3rem auto;
+}
+
+.countdown-title {
+  color: #6b889d; 
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin-bottom: 1.5rem;
+}
+
+/* Flexbox for layout */
+.countdown-display {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.countdown-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+/* The Ticket / Tab Design */
+.countdown-card {
+  background-color: #c8456e; 
+  color: white;
+  font-size: 4rem;
+  font-weight: bold;
+  font-family: monospace; /* Gives numbers uniform width */
+  padding: 1rem;
+  border-radius: 8px;
+  min-width: 90px;
+  position: relative;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Creates the 3D lift */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
+}
+
+/* The split horizontal line */
+.countdown-card::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: rgba(0, 0, 0, 0.3); /* Dark transparent line */
+  transform: translateY(-50%);
+}
+
+/* Labels below the tickets */
+.countdown-label {
+  color: #6b889d; 
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Optional: Mobile Responsiveness */
+@media (max-width: 600px) {
+  .countdown-display {
+    gap: 0.5rem;
+  }
+  .countdown-card {
+    font-size: 2.5rem;
+    min-width: 60px;
+    padding: 0.8rem;
+  }
+  .countdown-label {
+    font-size: 0.7rem;
+  }
+}
+
+
