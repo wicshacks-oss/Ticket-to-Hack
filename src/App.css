@@ -196,6 +196,32 @@
   margin-top: 48px;
 }
 
+/* styling the faq section*/
+.faq-list {
+  list-style: none;
+  padding: 0;
+}
+
+.faq-list li {
+  border-bottom: 1px solid #ddd;
+  padding: 15px 0;
+}
+
+.faq-list summary {
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.faq-list summary:hover {
+  opacity: 0.7;
+}
+
+.faq-list details p {
+  margin-top: 12px;
+  line-height: 1.6;
+}
+
 /* Removes the dots and indentation from the list */
 .info-section ul {
   list-style: none;
