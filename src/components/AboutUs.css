@@ -1,0 +1,88 @@
+/* ---------- About Us section ---------- */
+
+.about-us-section {
+  max-width: 1000px;
+  margin: 48px auto 0;
+  padding: 0 24px;
+  text-align: left;
+}
+
+/* Each block is a row: text + photo side by side */
+.about-block {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 64px;
+}
+
+/* Block 2 is pushed toward the right edge for the zigzag look */
+.about-block-right {
+  margin-left: 12%;
+}
+
+.about-text {
+  flex: 1 1 55%;
+}
+
+.about-text h2 {
+  margin-bottom: 12px;
+}
+
+.about-text p {
+  line-height: 1.6;
+  margin: 0 0 16px;
+}
+
+/* Bold call to action under the first block */
+.about-cta {
+  font-weight: 700;
+}
+
+/* ---------- Tilted photo "polaroid" frames ---------- */
+
+.about-photo {
+  flex: 1 1 40%;
+  margin: 0;
+}
+
+.about-photo img,
+.about-photo-placeholder {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+/* Shown until a real photo is dropped in */
+.about-photo-placeholder {
+  background: #d9d9d9;
+}
+
+.about-photo-right {
+  transform: rotate(3deg);
+}
+
+.about-photo-left {
+  transform: rotate(-4deg);
+}
+
+/* ---------- Small screens: stack everything ---------- */
+
+@media (max-width: 700px) {
+  .about-block,
+  .about-block-right {
+    flex-direction: column;
+    margin-left: 0;
+    gap: 24px;
+  }
+
+  /* Keep the text above the photo in both blocks */
+  .about-block-right .about-photo {
+    order: 2;
+  }
+
+  .about-photo {
+    width: 85%;
+  }
+}
