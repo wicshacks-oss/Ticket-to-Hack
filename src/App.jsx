@@ -3,6 +3,7 @@ import heroImg from './assets/hero.png'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import myLogo from './assets/logo.png'
+import AboutUs from './components/AboutUs'
 import './App.css'
 
 function App() {
@@ -29,6 +30,9 @@ function App() {
           <li>Where? Rice Hall | 85 Engineers Way, Charlottesville, VA, 22903</li>
         </ul>      
       </section>
+      
+      {/* About Us section */}
+      <AboutUs />
 
     </div>
     // ending div
