@@ -1,9 +1,12 @@
 import './AboutUs.css'
+import React from 'react';
+import dscPhoto from '../assets/_DSC0195.JPG';
+import img0341Photo from '../assets/IMG_0341.jpeg';
 
 
 function AboutUs() {
   return (
-    <section id="about" className="about-us-section">
+<section id="about" className="about-us-section">
       {/* Block 1: text on the left, tilted photo on the right */}
       <div className="about-block about-block-left">
         <div className="about-text">
@@ -22,14 +25,20 @@ function AboutUs() {
           <p className="about-cta">Join us on February 20 – 21 at Rice Hall!</p>
         </div>
         <figure className="about-photo about-photo-right">
-          <div className="about-photo-placeholder" role="img" aria-label="WiCS members at a past event" />
+          <img 
+            src={dscPhoto} 
+            alt="WiCS members at a past event" 
+          />
         </figure>
       </div>
 
       {/* Block 2: photo on the left, text on the right (shifted over) */}
       <div className="about-block about-block-right">
         <figure className="about-photo about-photo-left">
-          <div className="about-photo-placeholder" role="img" aria-label="Students working together" />
+          <img 
+            src={img0341Photo} 
+            alt="Students working together" 
+          />
         </figure>
         <div className="about-text">
           <h2>WiCS @ UVA</h2>
@@ -48,7 +57,7 @@ function AboutUs() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 export default AboutUs
