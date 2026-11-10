@@ -319,4 +319,44 @@
   }
 }
 
+/* Position the nav container at the top right */
+.ticket-nav {
+  position: absolute; /* or fixed, depending on if you want it to scroll with the page */
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 0px; /* 0 gap creates the "chain" effect */
+  z-index: 1000;
+}
 
+/* Style the buttons using your ticket image as the background */
+.ticket-tab {
+  /* Uses the inline variable passed from React, or replace with url('./assets/your-ticket-image.png') */
+  background-image: var(--ticket-bg); 
+  background-size: 100% 100%;
+  background-position: center;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  
+  /* Adjust these dimensions to match the proportions of your specific ticket image */
+  width: 130px; 
+  height: 60px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  font-family: 'Courier New', Courier, monospace; /* Vintage ticket font feel */
+  font-weight: bold;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Optional hover effect so it feels interactive */
+.ticket-tab:hover {
+  transform: scale(1.05);
+  color: #ff4b72;
+}

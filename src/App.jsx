@@ -4,6 +4,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import myLogo from './assets/logo.png'
 import AboutUs from './components/AboutUs'
+import ticketGraphic from './assets/ticket_tab.png'
 import './App.css'
 
 function App() {
@@ -41,10 +42,26 @@ function App() {
   // Helper function to pad single digits with a leading zero
   const formatTime = (time) => String(time).padStart(2, '0');
 
+  // Smooth scroll handler function
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div>
       
-      {/* Main Header */}
+      {/* Top Right Ticket-Style Navigation Bar */}
+      <nav className="ticket-nav" style={{"--ticket-bg": `url(${ticketGraphic})`}}>
+        <button className="ticket-tab" onClick={() => scrollToSection('about')}>About Us</button>
+        <button className="ticket-tab" onClick={() => scrollToSection('faq')}>FAQ</button>
+        <button className="ticket-tab" onClick={() => scrollToSection('schedule')}>Schedule</button>
+        <button className="ticket-tab" onClick={() => scrollToSection('register')}>Register</button>
+      </nav>
+
+      {/* Main Header (Notice the giant ticket is removed from below here) */}
       <img src={myLogo} alt="Ticket to Hack" className="main-logo" />
       
       {/* Ticket-Style Countdown Timer */}
@@ -93,65 +110,76 @@ function App() {
       </section>
       
       {/* About Us section */}
-      <AboutUs />
+      <div id="about">
+        <AboutUs />
+      </div>
 
-        {/* Frequently Asked Questions*/}
-        <section className="info-section">
-            <h2>Frequently Asked Questions</h2>
+      {/* Schedule section (Placeholder added for navigation) */}
+      <section id="schedule" className="info-section">
+        <h2>Schedule</h2>
+        <p>Coming soon! Check back later for a full timeline of events, workshops, and deadlines.</p>
+      </section>
 
-            <ul className="faq-list">
-                <li>
-                    <details>
-                        <summary>What is a Hackathon?</summary>
-                        <p>
-                            A hackathon is an event where people work in teams to solve
-                            problems or build projects, usually using technology. The event
-                            often includes different prize tracks focused on specific themes
-                            or challenges. At the end, teams present their projects, and
-                            winners are selected based on set criteria.
-                        </p>
-                    </details>
-                </li>
+      {/* Frequently Asked Questions*/}
+      <section id="faq" className="info-section">
+        <h2>Frequently Asked Questions</h2>
 
-                <li>
-                    <details>
-                        <summary>When and where is the event?</summary>
-                        <p>
-                            Ticket to Hack will take place February 20th - 21st, 2027,
-                            at Rice Hall, located at 85 Engineers Way,
-                            Charlottesville, VA 22903
-                        </p>
-                    </details>
-                </li>
+        <ul className="faq-list">
+            <li>
+                <details>
+                    <summary>What is a Hackathon?</summary>
+                    <p>
+                        A hackathon is an event where people work in teams to solve
+                        problems or build projects, usually using technology. The event
+                        often includes different prize tracks focused on specific themes
+                        or challenges. At the end, teams present their projects, and
+                        winners are selected based on set criteria.
+                    </p>
+                </details>
+            </li>
 
-                <li>
-                    <details>
-                        <summary>Do I need to know how to code?</summary>
-                        <p>
-                            No prior programming experience is required!
-                            Ticket to Hack is a beginner-friendly hackathon,
-                            and participants of all experience levels are welcome.
-                        </p>
-                    </details>
-                </li>
+            <li>
+                <details>
+                    <summary>When and where is the event?</summary>
+                    <p>
+                        Ticket to Hack will take place February 20th - 21st, 2027,
+                        at Rice Hall, located at 85 Engineers Way,
+                        Charlottesville, VA 22903
+                    </p>
+                </details>
+            </li>
 
-                <li>
-                    <details>
-                        <summary>Do I need a team?</summary>
-                        <p>
-                            No, you don't need a team to participate! However, if you're
-                            looking to form a team of up to four people, there will be
-                            Discord channels and a Day 1 workshop to help with team formation.
-                        </p>
-                    </details>
-                </li>
-            </ul>
+            <li>
+                <details>
+                    <summary>Do I need to know how to code?</summary>
+                    <p>
+                        No prior programming experience is required!
+                        Ticket to Hack is a beginner-friendly hackathon,
+                        and participants of all experience levels are welcome.
+                    </p>
+                </details>
+            </li>
 
-        </section>
+            <li>
+                <details>
+                    <summary>Do I need a team?</summary>
+                    <p>
+                        No, you don't need a team to participate! However, if you're
+                        looking to form a team of up to four people, there will be
+                        Discord channels and a Day 1 workshop to help with team formation.
+                    </p>
+                </details>
+            </li>
+        </ul>
+      </section>
 
+      {/* Register section (Placeholder added for navigation) */}
+      <section id="register" className="info-section">
+        <h2>Register</h2>
+        <p>Registration opens soon! Secure your ticket and get ready for Ticket to Hack 2027.</p>
+      </section>
 
     </div>
-    // ending div
   )
 }
 
