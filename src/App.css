@@ -186,16 +186,34 @@
 /* CSS section for mission statement section */
 
 .mission-statement-section {
-  margin-top: 48px;
+  max-width: 800px;
+  margin: 80px auto 0;
+  padding: 0 24px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.mission-statement-section p {
+  max-width: 65ch;
+  margin: 0 auto;
+  line-height: 1.8;
 }
 
 /* CSS section for info section */
 
-/* Pushes the entire section down from the content above it */
 .info-section {
-  margin-top: 48px;
+  max-width: 800px;
+  margin: 80px auto 0;
+  padding: 0 24px;
+  text-align: center;
+  box-sizing: border-box;
 }
 
+.info-section p {
+  max-width: 65ch;
+  margin: 0 auto;
+  line-height: 1.8;
+}
 /* styling the faq section*/
 .faq-list {
   list-style: none;
@@ -203,8 +221,8 @@
 }
 
 .faq-list li {
-  border-bottom: 1px solid #ddd;
-  padding: 15px 0;
+  border-bottom: 1px solid rgba(103, 45, 64, 0.3);
+  padding: 20px 0;
 }
 
 .faq-list summary {
@@ -220,6 +238,17 @@
 .faq-list details p {
   margin-top: 12px;
   line-height: 1.6;
+}
+.faq-list {
+  max-width: 700px;
+  margin: 24px auto 0;
+  text-align: left;
+}
+
+.faq-list details p {
+  max-width: 60ch;
+  margin: 12px 0 0;
+  line-height: 1.7;
 }
 
 /* Removes the dots and indentation from the list */
@@ -316,6 +345,18 @@
   }
   .countdown-label {
     font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .mission-statement-section,
+  .info-section {
+    margin-top: 50px;
+    padding: 0 20px;
+  }
+
+  .faq-list {
+    padding: 0;
   }
 }
 
