@@ -5,7 +5,7 @@
   width: 100%;
   background-color: #7a1f45;
   z-index: 9999;
-  padding: 20px 30px; 
+  padding: 15px 30px; 
   box-sizing: border-box;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   display: flex;
@@ -23,7 +23,7 @@
 
 .nav-tickets { 
   display: flex; 
-  gap: 15px; 
+  gap: 5px; 
   align-items: center; 
 }
 
@@ -31,8 +31,8 @@
   display: flex; 
   align-items: center; 
   justify-content: center;
-  width: 150px; 
-  height: 60px;
+  width: 170px; 
+  height: 80px;
 
   background-size: 100% 100%;
   background-repeat: no-repeat; 
