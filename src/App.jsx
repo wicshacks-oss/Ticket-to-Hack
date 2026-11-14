@@ -1,158 +1,57 @@
-import { useState, useEffect } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import myLogo from './assets/logo.png'
-import AboutUs from './components/AboutUs'
-import './App.css'
+import React from 'react';
+import myLogo from './assets/logo.png';
+import Countdown from './components/Countdown';
+import Schedule from './components/Schedule';
+import AboutUs from './components/AboutUs';
+import FAQ from './components/FAQ';
+import Register from './components/Register';
+import ticketBg from './assets/ticket-tab.png';
+import './App.css';
 
 function App() {
-
-  // Initialize state for the countdown timer
-  const [timeLeft, setTimeLeft] = useState({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0,
-  });
-
-  useEffect(() => {
-    const targetDate = new Date("February 20, 2027 00:00:00").getTime();
-
-    const interval = setInterval(() => {
-      const now = new Date().getTime();
-      const distance = targetDate - now;
-
-      if (distance > 0) {
-        setTimeLeft({
-          days: Math.floor(distance / (1000 * 60 * 60 * 24)),
-          hours: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
-          minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
-          seconds: Math.floor((distance % (1000 * 60)) / 1000),
-        });
-      } else {
-        clearInterval(interval);
-      }
-    }, 1000);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  // Helper function to pad single digits with a leading zero
-  const formatTime = (time) => String(time).padStart(2, '0');
-
   return (
     <div>
+      {/* Sticky Header */}
+      <header className="sticky-header">
+        <span className="header-title">Ticket to Hack</span>
+        
+        {/* Ticket Navigation Tabs */}
+        <nav className="nav-tickets">
+          <a href="#about-us" className="ticket-link" style={{ backgroundImage: `url(${ticketBg})` }}>About Us</a>
+          <a href="#faq" className="ticket-link" style={{ backgroundImage: `url(${ticketBg})` }}>FAQ</a>
+          <a href="#schedule" className="ticket-link" style={{ backgroundImage: `url(${ticketBg})` }}>Schedule</a>
+          <a href="#register" className="ticket-link" style={{ backgroundImage: `url(${ticketBg})` }}>Register</a>
+        </nav>
+      </header>
       
       {/* Main Header */}
       <img src={myLogo} alt="Ticket to Hack" className="main-logo" />
       
-      {/* Ticket-Style Countdown Timer */}
-      <section className="countdown-section">
-        <h2 className="countdown-title">TIME REMAINING</h2>
-        <div className="countdown-display">
-          
-          <div className="countdown-item">
-            <div className="countdown-card">{formatTime(timeLeft.days)}</div>
-            <span className="countdown-label">DAYS</span>
-          </div>
-          
-          <div className="countdown-item">
-            <div className="countdown-card">{formatTime(timeLeft.hours)}</div>
-            <span className="countdown-label">HOURS</span>
-          </div>
-          
-          <div className="countdown-item">
-            <div className="countdown-card">{formatTime(timeLeft.minutes)}</div>
-            <span className="countdown-label">MINUTES</span>
-          </div>
-          
-          <div className="countdown-item">
-            <div className="countdown-card">{formatTime(timeLeft.seconds)}</div>
-            <span className="countdown-label">SECONDS</span>
-          </div>
+      {/* Countdown Timer */}
+      <Countdown />
 
-        </div>
-      </section>
+      {/* Schedule & Mission Section */}
+      <div id="schedule">
+        <Schedule />
+      </div>
       
-      {/* "Mission statement" about the event */}
-      <section className="mission-statement-section">
-        <h2>Hackathon Mission</h2>
-        <p>
-        WiCS Hackathon is a 24-hour hackathon hosted by WiCS, aiming to promote diversity and bring together the community of women in STEM at UVA and surrounding schools.
-        </p>
-      </section>
+      {/* About Us Section */}
+      <div id="about-us">
+        <AboutUs />
+      </div>
 
-      {/* Information about the event */}
-      <section className="info-section">
-        <h2>About the Event</h2>
-        <ul>
-          <li>When? February 20th - 21st 2027</li>
-          <li>Where? Rice Hall | 85 Engineers Way, Charlottesville, VA, 22903</li>
-        </ul>      
-      </section>
-      
-      {/* About Us section */}
-      <AboutUs />
+      {/* FAQ Section */}
+      <div id="faq">
+        <FAQ />
+      </div>
 
-        {/* Frequently Asked Questions*/}
-        <section className="info-section">
-            <h2>Frequently Asked Questions</h2>
-
-            <ul className="faq-list">
-                <li>
-                    <details>
-                        <summary>What is a Hackathon?</summary>
-                        <p>
-                            A hackathon is an event where people work in teams to solve
-                            problems or build projects, usually using technology. The event
-                            often includes different prize tracks focused on specific themes
-                            or challenges. At the end, teams present their projects, and
-                            winners are selected based on set criteria.
-                        </p>
-                    </details>
-                </li>
-
-                <li>
-                    <details>
-                        <summary>When and where is the event?</summary>
-                        <p>
-                            Ticket to Hack will take place February 20th - 21st, 2027,
-                            at Rice Hall, located at 85 Engineers Way,
-                            Charlottesville, VA 22903
-                        </p>
-                    </details>
-                </li>
-
-                <li>
-                    <details>
-                        <summary>Do I need to know how to code?</summary>
-                        <p>
-                            No prior programming experience is required!
-                            Ticket to Hack is a beginner-friendly hackathon,
-                            and participants of all experience levels are welcome.
-                        </p>
-                    </details>
-                </li>
-
-                <li>
-                    <details>
-                        <summary>Do I need a team?</summary>
-                        <p>
-                            No, you don't need a team to participate! However, if you're
-                            looking to form a team of up to four people, there will be
-                            Discord channels and a Day 1 workshop to help with team formation.
-                        </p>
-                    </details>
-                </li>
-            </ul>
-
-        </section>
-
+      {/* Register Section */}
+      <div id="register">
+        <Register />
+      </div>
 
     </div>
-    // ending div
-  )
+  );
 }
 
-export default App
+export default App;

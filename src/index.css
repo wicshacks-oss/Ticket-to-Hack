@@ -12,8 +12,7 @@
   --accent-bg: rgba(170, 59, 255, 0.1);
   --accent-border: rgba(170, 59, 255, 0.5);
   --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+  --shadow: rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
 
   --sans: 'Nunito', sans-serif;
   --heading: 'Rye', Georgia, serif;
@@ -34,25 +33,16 @@
   }
 }
 
-/* CSS for background image (blue sky) */
-#root {
-  max-width: 100%;
-  text-align: center;
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-  
-  background-image: url('./assets/blue-sky.png'); 
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+/* Enable smooth scrolling for the whole page */
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
 }
 
+/* CSS for background image and main container */
 #root {
   max-width: 100%;
   text-align: center;
@@ -60,6 +50,10 @@ body {
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
+  background-image: url('./assets/blue-sky.png'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 /* Main headings */
@@ -69,21 +63,18 @@ h1, h2 {
   color: var(--text-h);
 }
 
-/* Large headings */
 h1 {
   font-size: 56px;
   line-height: 1.15;
   margin: 32px 0;
 }
 
-/* Section headings */
 h2 {
   font-size: 40px;
   line-height: 1.2;
   margin: 0 0 20px;
 }
 
-/* Paragraph text */
 p {
   font-family: var(--sans);
   font-size: 18px;
@@ -92,39 +83,19 @@ p {
   margin: 0;
 }
 
-/* Mobile responsiveness */
-@media (max-width: 700px) {
-  h1 {
-    font-size: 40px;
-  }
-
-  h2 {
-    font-size: 30px;
-  }
-
-  p {
-    font-size: 16px;
-  }
-}
-
-code,
-.counter {
+code {
   font-family: var(--mono);
   display: inline-flex;
   border-radius: 4px;
   color: var(--text-h);
-}
-
-code {
   font-size: 15px;
   line-height: 135%;
   padding: 4px 8px;
   background: var(--code-bg);
 }
 
-.info-section > ul:not(.faq-list) li {
-  font-family: var(--sans);
-  font-size: 18px;
-  line-height: 1.7;
-  color: #49383B;
+@media (max-width: 700px) {
+  h1 { font-size: 40px; }
+  h2 { font-size: 30px; }
+  p { font-size: 16px; }
 }
