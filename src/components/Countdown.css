@@ -35,7 +35,6 @@
     border-radius: 8px;
     min-width: 90px;
     position: relative;
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); 
     display: flex;
     justify-content: center;
     align-items: center;
