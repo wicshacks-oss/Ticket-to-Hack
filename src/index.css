@@ -6,8 +6,9 @@
   --text: #49383B;
   --text-h: #C92F3D;
   --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
+  --border: #b8dcf3;
+  --code-bg: #b8dcf3;
+;
   --accent: #aa3bff;
   --accent-bg: rgba(170, 59, 255, 0.1);
   --accent-border: rgba(170, 59, 255, 0.5);
@@ -42,7 +43,7 @@ body {
   margin: 0;
 }
 
-/* CSS for background image and main container */
+/* CSS for background image and main container color: #fdebd8; */
 #root {
   max-width: 100%;
   text-align: center;
@@ -50,11 +51,11 @@ body {
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  background-image: url('./assets/blue-sky.png'); 
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-}
+  
+  background-color: #b8dcf3;}
 
 /* Main headings */
 h1, h2 {

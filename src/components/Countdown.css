@@ -1,6 +1,9 @@
 .countdown-section {
     text-align: center;
-    margin: 3rem auto;
+    margin: 0; 
+    padding: 0;
+    position: relative;
+    z-index: 2;
   }
   
   .countdown-title {
