@@ -1,6 +1,7 @@
 import React from 'react';
 import myLogo from './assets/logo.png';
 import ticketBg from './assets/ticket-tab.png'; 
+import registerTicketImg from './assets/register-ticket.png';
 import tentImg from './assets/Firefly (1).png'; 
 import arrowImg from './assets/arrow.png';
 import Countdown from './components/Countdown';
@@ -20,7 +21,6 @@ function App() {
           <a href="#about-us" className="ticket-link" style={{ backgroundImage: `url(${ticketBg})` }}>About Us</a>
           <a href="#faq" className="ticket-link" style={{ backgroundImage: `url(${ticketBg})` }}>FAQ</a>
           <a href="#schedule" className="ticket-link" style={{ backgroundImage: `url(${ticketBg})` }}>Schedule</a>
-          <a href="https://tally.so/r/vG7bYX" target="_blank" rel="noopener noreferrer" className="ticket-link" style={{ backgroundImage: `url(${ticketBg})` }}>Register</a>
           <a href="https://github.com/MLH/mlh-policies/blob/main/code-of-conduct.md" target="_blank" rel="noopener noreferrer" className="ticket-link" style={{ backgroundImage: `url(${ticketBg})`, fontSize: '12px', textAlign: 'center', lineHeight: '1.2' }}>MLH Code <br/> of Conduct</a>
         </nav>
       </header>
@@ -31,8 +31,29 @@ function App() {
         <img src={myLogo} alt="Ticket to Hack" className="main-logo" />
         
         {/* Carnival House moved to the middle */}
-        <img src={tentImg} alt="Circus Tent" className="tent-image" />
-        
+{/* Container to keep arrow and tent aligned */}
+      <div className="tent-container">
+          
+          <div className="arrow-wrapper">
+            <img src={arrowImg} alt="Arrow pointing to tent" className="arrow-image" />
+            <span className="arrow-text">Register<br/>Here</span>
+          </div>
+          
+          {/* New wrapper to place the ticket ON the tent */}
+          <div className="tent-wrapper">
+            <img src={tentImg} alt="Circus Tent" className="tent-image" />
+            
+            <a 
+              href="https://tally.so/r/vG7bYX" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="register-ticket-link"
+            >
+              <img src={registerTicketImg} alt="Admit One Register Ticket" className="register-ticket-image" />
+            </a>
+          </div>
+
+        </div>
         {/* Countdown moved to the bottom */}
         <Countdown />
       </section>

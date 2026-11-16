@@ -116,7 +116,7 @@ section, #about-us, #schedule, #faq, #register {
   justify-content: center;
   align-items: center;
   width: 100%;
-  max-width: 1000px; /* Matches the tent's max width */
+  max-width: 3000px; /* Matches the tent's max width */
   margin-top: -40px;    /* Pulls group closer to the logo */
   margin-bottom: -30px; /* Pulls countdown closer to the group */
   z-index: 1;
@@ -124,35 +124,85 @@ section, #about-us, #schedule, #faq, #register {
 
 /* Styles and enlarges the carnival house */
 .tent-image {
-  width: 95%;
-  max-width: 1200px; /* Increased to make the tent much larger */
+  width: 100%;
+  max-width: 2000px; 
   height: auto;
-  
-  /* Negative margins eat up any transparent empty space in the PNG file */
-  margin-top: -175px;    /* Pulls the tent up closer to the logo */
-  margin-bottom: -30px; /* Pulls the countdown up closer to the tent */
-  
+  margin-top: -175px;    
+  margin-bottom: -30px; 
   position: relative;
   z-index: 1;
+  display: block;
+}
+
+.tent-container {
+  display: flex;
+  align-items: center;       
+  justify-content: center;   
+  /* Remove the gap property so we can control spacing with negative margins */
+  margin: 40px 0;            
 }
 
 /* Positions the arrow to the left of the tent */
-.arrow-image {
-  position: absolute;
+/* Wrapper to hold both the image and the text */
+.arrow-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   
-  /* Changed from -5% to 10% to pull it safely inside the screen */
-  left: 10%; 
-  
-  /* Adjusted top to center it better vertically against the tent */
-  top: 35%;  
-  
-  width: 150px; /* Made it slightly smaller so it fits better on narrow screens */
-  height: auto;
-  transform: rotate(5deg); 
-  z-index: 5; /* Increased z-index to guarantee it sits on top of everything */
+  /* Move the negative margin and z-index to the wrapper */
+  margin-right: -250px; 
+  z-index: 2; 
 }
 
-/* 
-  Make sure to DELETE the entire @media (max-width: 700px) block 
-  that had 'display: none' for the arrow-image!
-*/
+.arrow-image {
+  width: 300px; 
+  height: auto;
+  object-fit: contain;
+}
+
+/* Positions the text exactly in the center of the arrow */
+.arrow-text {
+  position: absolute;
+  font-family: var(--heading);
+  color: var(--text-h); /* Matches your dark red header text */
+  font-size: 22px;
+  text-align: center;
+  line-height: 1.1;
+  
+  /* Optional: Adjust these values if the text isn't perfectly centered on your specific arrow graphic */
+  top: 50%;
+  left: 50%;
+  transform: translate(-60%, -50%);
+  
+  pointer-events: none; /* Ensures the text doesn't block clicking if you make the arrow a link later */
+}
+/* Position the ticket link over the tent */
+/* Restrict the clickable area to exactly the size of the ticket */
+.register-ticket-link {
+  position: absolute;
+  z-index: 10;
+  top: 65%; 
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 0.2s ease;
+  cursor: pointer;
+  
+  /* These lines prevent the link box from stretching over the tent */
+  display: inline-block;
+  width: fit-content;
+  height: fit-content;
+  border: none;
+  outline: none;
+}
+
+.register-ticket-link:hover {
+  transform: translate(-50%, -50%) scale(1.05); 
+}
+
+.register-ticket-image {
+  width: 700px; /* Change this to resize the ticket itself */
+  height: auto;
+  display: block; /* Removes inline spacing ghost pixels */
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.25)); 
+}
