@@ -1,7 +1,7 @@
 import './AboutUs.css'
 import React from 'react';
 import dscPhoto from '../assets/_DSC0195.JPG';
-import img0341Photo from '../assets/IMG_0341.jpeg';
+import img0341Photo from '../assets/_DSC0187.JPG';
 
 
 function AboutUs() {

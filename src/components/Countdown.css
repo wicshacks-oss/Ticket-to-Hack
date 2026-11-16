@@ -1,0 +1,69 @@
+.countdown-section {
+    text-align: center;
+    margin: 0; 
+    padding: 0;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .countdown-title {
+    color: #6b889d; 
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 1.5rem;
+  }
+  
+  .countdown-display {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  
+  .countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  
+  .countdown-card {
+    background-color: #c8456e; 
+    color: white;
+    font-size: 4rem;
+    font-weight: bold;
+    font-family: monospace;
+    padding: 1rem;
+    border-radius: 8px;
+    min-width: 90px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1;
+  }
+  
+  .countdown-card::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: rgba(0, 0, 0, 0.3);
+    transform: translateY(-50%);
+  }
+  
+  .countdown-label {
+    color: #6b889d; 
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  @media (max-width: 600px) {
+    .countdown-display { gap: 0.5rem; }
+    .countdown-card { font-size: 2.5rem; min-width: 60px; padding: 0.8rem; }
+    .countdown-label { font-size: 0.7rem; }
+  }

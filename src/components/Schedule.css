@@ -1,0 +1,20 @@
+.mission-statement-section {
+    max-width: 800px;
+    margin: 80px auto 0;
+    padding: 0 24px;
+    text-align: center;
+    box-sizing: border-box;
+  }
+  
+  .mission-statement-section p {
+    max-width: 65ch;
+    margin: 0 auto;
+    line-height: 1.8;
+  }
+  
+  @media (max-width: 700px) {
+    .mission-statement-section {
+      margin-top: 50px;
+      padding: 0 20px;
+    }
+  }
