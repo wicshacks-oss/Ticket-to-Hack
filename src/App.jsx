@@ -6,7 +6,9 @@ import Countdown from './components/Countdown';
 import Schedule from './components/Schedule';
 import AboutUs from './components/AboutUs';
 import FAQ from './components/FAQ';
+import Footer from './components/Footer.jsx';
 import './App.css';
+
 
 function App() {
   return (
