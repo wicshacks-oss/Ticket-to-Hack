@@ -153,11 +153,8 @@ section, #about-us, #schedule, #faq, #register {
   transition: transform 0.2s ease;
   cursor: pointer;
 
-  width: 10%; /* Scales the ticket relative to the landing section */
-  min-width: 120px; /* Ensures it stays readable on mobile devices */
-  max-width: 250px; /* Prevents it from becoming massive on large screens */
-  
-  /* These lines prevent the link box from stretching over the tent */
+  width: 10%; /* Scales the ticket relative to the landing section */  
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -173,9 +170,10 @@ section, #about-us, #schedule, #faq, #register {
 }
 
 .register-ticket-image {
-  width: 50%; /* Change this to resize the ticket itself */
+  width: 40%; /* Change this to resize the ticket itself */
   height: auto;
   display: block; 
+  object-fit: contain;
   filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.25));
 }
 
@@ -248,5 +246,24 @@ section, #about-us, #schedule, #faq, #register {
   .landing-full-image {
     object-fit: contain; /* Prevents the sides from being chopped off */
     height: auto; /* Allows the image height to scale naturally with the width */
+  }
+
+  .register-ticket-link {
+    /* This removes the 120px minimum that was forcing it to stretch on phones */
+    min-width: unset; 
+    /* Uses a percentage so it perfectly shrinks with the carnival tent */
+    width: 18%; 
+  }
+
+  .register-ticket-image {
+    /* Guarantees the image will never distort or stretch vertically */
+    object-fit: contain; 
+  }
+
+  .register-arrow {
+    /* Overrides the giant 150px width and makes it phone-sized */
+    width: 15%; 
+    /* You may need to slightly adjust this top percentage to keep it above the ticket on mobile */
+    top: 52%; 
   }
 }
