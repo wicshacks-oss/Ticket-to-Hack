@@ -195,3 +195,36 @@ section, #about-us, #schedule, #faq, #register {
   object-fit: cover; 
   object-position: center center; 
 }
+
+@media (max-width: 900px) {
+  /* --- Header Fixes --- */
+  .sticky-header {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+  }
+
+  .nav-tickets {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  /* Shrinks the tickets slightly to fit better on mobile */
+  .ticket-link {
+    width: 140px; 
+    height: 65px;
+    font-size: 14px;
+  }
+
+  /* --- Landing Page Fixes --- */
+  .landing-image-container {
+    height: auto; 
+    min-height: auto; 
+  }
+
+  .landing-full-image {
+    object-fit: contain; /* Prevents the sides from being chopped off */
+    height: auto; /* Allows the image height to scale naturally with the width */
+  }
+}
