@@ -37,6 +37,7 @@ function App() {
       
       {/* 2. NEW LANDING DESIGN */}
       <section className="landing-image-container">
+      <div className="landing-wrapper">
         <img src={landingBg} alt="Ticket to Hack 2026" className="landing-full-image" />
 
         {/* THE ANIMATED ARROW */}
@@ -52,6 +53,7 @@ function App() {
           <img src={registerTicket} alt="Register Here" className="register-ticket-image" />
         </a>
 
+        </div>
       </section>
         
       {/* 3. SCROLLABLE CONTENT SECTIONS WITH BACKGROUND */}
