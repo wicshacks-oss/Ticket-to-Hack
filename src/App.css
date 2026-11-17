@@ -1,10 +1,43 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Forces the app to be exactly the height of the screen */
+}
+
+.scrolling-content-bg {
+  background-image: url('./assets/scrolling-page.png');
+  width: 100%;
+  background-size: cover; 
+  background-position: center top;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-section {
+  /* Adds spacing so your text doesn't hit the edges of the screen */
+  padding: 80px 5%;
+  min-height: 50vh; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.countdown-wrapper {
+  /* Gives the countdown a little breathing room before the Schedule starts */
+  padding: 40px 0; 
+  display: flex;
+  justify-content: center;
+}
+
+
 /* --- Sticky Header & Tickets --- */
 .sticky-header {
   position: sticky;
   top: 0;
   width: 100%;
   background-color: #7a1f45;
-  z-index: 9999;
+  z-index: 100;
   padding: 15px 30px; 
   box-sizing: border-box;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -110,49 +143,110 @@ section, #about-us, #schedule, #faq, #register {
   box-sizing: border-box;
 }
 
-.tent-wrapper {
-  position: relative;
+/* Restrict the clickable area to exactly the size of the ticket */
+.register-ticket-link {
+  position: absolute;
+  z-index: 10;
+  top: 95%;  /* Adjust this up or down to center it on the house doors */
+  left: 50.5%;
+  transform: translate(-50%, -50%);
+  transition: transform 0.2s ease;
+  cursor: pointer;
+
+  width: 10%; /* Scales the ticket relative to the landing section */
+  min-width: 120px; /* Ensures it stays readable on mobile devices */
+  max-width: 250px; /* Prevents it from becoming massive on large screens */
+  
+  /* These lines prevent the link box from stretching over the tent */
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  max-width: 1000px; /* Matches the tent's max width */
-  margin-top: -40px;    /* Pulls group closer to the logo */
-  margin-bottom: -30px; /* Pulls countdown closer to the group */
-  z-index: 1;
+  width: fit-content;
+  height: fit-content;
+  
+  border: none;
+  outline: none;
 }
 
-/* Styles and enlarges the carnival house */
-.tent-image {
-  width: 95%;
-  max-width: 1200px; /* Increased to make the tent much larger */
+.register-ticket-link:hover {
+  transform: translate(-50%, -50%) scale(1.05); 
+}
+
+.register-ticket-image {
+  width: 50%; /* Change this to resize the ticket itself */
   height: auto;
-  
-  /* Negative margins eat up any transparent empty space in the PNG file */
-  margin-top: -175px;    /* Pulls the tent up closer to the logo */
-  margin-bottom: -30px; /* Pulls the countdown up closer to the tent */
-  
-  position: relative;
-  z-index: 1;
+  display: block; 
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.25));
 }
 
-/* Positions the arrow to the left of the tent */
-.arrow-image {
+.register-arrow {
   position: absolute;
+  top: 55%; /* Places it above the ticket */
+  left: 30%;
+  transform: translateX(-50%) rotate(25deg);
+  width: 15%; /* Adjust the arrow size here */
+  z-index: 10;
+  mix-blend-mode: multiply;
+
+}  
+
+.landing-image-container {
+  flex: 1;
+  width: 100%;
+  height: calc(100vh - 80px);
   
-  /* Changed from -5% to 10% to pull it safely inside the screen */
-  left: 10%; 
+  min-height: 600px; 
   
-  /* Adjusted top to center it better vertically against the tent */
-  top: 35%;  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; 
   
-  width: 150px; /* Made it slightly smaller so it fits better on narrow screens */
-  height: auto;
-  transform: rotate(5deg); 
-  z-index: 5; /* Increased z-index to guarantee it sits on top of everything */
+  background-color: #fcf9f2; 
 }
 
-/* 
-  Make sure to DELETE the entire @media (max-width: 700px) block 
-  that had 'display: none' for the arrow-image!
-*/
+.landing-wrapper {
+  position: relative; /* <--- This is the new anchor! */
+  display: inline-block; /* Forces the div to shrink-wrap perfectly around the image */
+  max-width: 100%; 
+}
+
+.landing-full-image {
+  width: 100%;
+  height: auto;
+  display: block; /* Removes invisible spacing at the bottom of the image */
+  }
+
+
+@media (max-width: 900px) {
+  /* --- Header Fixes --- */
+  .sticky-header {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+  }
+
+  .nav-tickets {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  /* Shrinks the tickets slightly to fit better on mobile */
+  .ticket-link {
+    width: 140px; 
+    height: 65px;
+    font-size: 14px;
+  }
+
+  /* --- Landing Page Fixes --- */
+  .landing-image-container {
+    height: auto; 
+    min-height: auto; 
+  }
+
+  .landing-full-image {
+    object-fit: contain; /* Prevents the sides from being chopped off */
+    height: auto; /* Allows the image height to scale naturally with the width */
+  }
+}

@@ -1,8 +1,9 @@
 import React from 'react';
-import myLogo from './assets/logo.png';
 import ticketBg from './assets/ticket-tab.png'; 
-import tentImg from './assets/Firefly (1).png'; 
-import arrowImg from './assets/arrow.png';
+import landingBg from './assets/landing-page.png'; 
+import scrollBg from './assets/scrolling-page.png';
+import registerArrow from './assets/register-arrow.gif'; 
+import registerTicket from './assets/register-ticket.png';
 import Countdown from './components/Countdown';
 import Schedule from './components/Schedule';
 import AboutUs from './components/AboutUs';
@@ -13,8 +14,8 @@ import './App.css';
 
 function App() {
   return (
-    <div>
-      {/* 1. STICKY HEADER & TABS (Fully intact!) */}
+    <div className="app-container">
+      {/* 1. STICKY HEADER & TABS */}
       <header className="sticky-header">
         <span className="header-title">Ticket to Hack</span>
         
@@ -22,39 +23,61 @@ function App() {
           <a href="#about-us" className="ticket-link" style={{ backgroundImage: `url(${ticketBg})` }}>About Us</a>
           <a href="#faq" className="ticket-link" style={{ backgroundImage: `url(${ticketBg})` }}>FAQ</a>
           <a href="#schedule" className="ticket-link" style={{ backgroundImage: `url(${ticketBg})` }}>Schedule</a>
-          <a href="https://tally.so/r/vG7bYX" target="_blank" rel="noopener noreferrer" className="ticket-link" style={{ backgroundImage: `url(${ticketBg})` }}>Register</a>
-          <a href="https://github.com/MLH/mlh-policies/blob/main/code-of-conduct.md" target="_blank" rel="noopener noreferrer" className="ticket-link" style={{ backgroundImage: `url(${ticketBg})`, fontSize: '12px', textAlign: 'center', lineHeight: '1.2' }}>MLH Code <br/> of Conduct</a>
+          <a 
+            href="https://github.com/MLH/mlh-policies/blob/main/code-of-conduct.md" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="ticket-link" 
+            style={{ backgroundImage: `url(${ticketBg})`, fontSize: '12px', textAlign: 'center', lineHeight: '1.2' }}
+          >
+            MLH Code <br/> of Conduct
+          </a>
         </nav>
       </header>
       
-      {/* 2. LANDING PAGE SECTION */}
-      <section className="landing-section">
-        {/* Logo at the top */}
-        <img src={myLogo} alt="Ticket to Hack" className="main-logo" />
+      {/* 2. NEW LANDING DESIGN */}
+      <section className="landing-image-container">
+      <div className="landing-wrapper">
+        <img src={landingBg} alt="Ticket to Hack 2026" className="landing-full-image" />
+
+        {/* THE ANIMATED ARROW */}
+        <img src={registerArrow} alt="Point to register" className="register-arrow" />
         
-        {/* Carnival House moved to the middle */}
-        <img src={tentImg} alt="Circus Tent" className="tent-image" />
-        
-        {/* Countdown moved to the bottom */}
-        <Countdown />
+        {/* THE CLICKABLE TICKET */}
+        <a 
+          href="https://tally.so/r/vG7bYX" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="register-ticket-link"
+        >
+          <img src={registerTicket} alt="Register Here" className="register-ticket-image" />
+        </a>
+
+        </div>
       </section>
+        
+      {/* 3. SCROLLABLE CONTENT SECTIONS WITH BACKGROUND */}
+      <div className="scrolling-content-bg">        
+        {/* Placed Countdown at the top of the scrolling section */}
+        <div className="countdown-wrapper">
+          <Countdown />
+        </div>
 
-      {/* 3. SCROLLABLE CONTENT SECTIONS */}
-      <div id="schedule">
-        <Schedule />
+        <section id="schedule" className="content-section">
+          <Schedule />
+        </section>
+        
+        <section id="about-us" className="content-section">
+          <AboutUs />
+        </section>
+
+        <section id="faq" className="content-section">
+          <FAQ />
+        </section>
+        
       </div>
-      
-      <div id="about-us">
-        <AboutUs />
-      </div>
-
-      <div id="faq">
-       <FAQ />
-          </div>
-
-        <Footer />
-
-</div>
+      <Footer />
+    </div>
   );
 }
 
