@@ -1,10 +1,16 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Forces the app to be exactly the height of the screen */
+}
+
 /* --- Sticky Header & Tickets --- */
 .sticky-header {
   position: sticky;
   top: 0;
   width: 100%;
   background-color: #7a1f45;
-  z-index: 9999;
+  z-index: 100;
   padding: 15px 30px; 
   box-sizing: border-box;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -140,16 +146,25 @@ section, #about-us, #schedule, #faq, #register {
 }
 
 .landing-image-container {
+
+  flex: 1;
   width: 100%;
-  height: calc(100vh - 80px); 
+  height: calc(100vh - 80px);
+  
+  min-height: 600px; 
+  
   display: flex;
   justify-content: center;
-  align-items: center; /* Centers the image vertically in the available space */
-  overflow: hidden; /* Prevents any accidental scrollbars */
+  align-items: center;
+  overflow: hidden; 
+  
+  background-color: #fcf9f2; 
 }
 
 .landing-full-image {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* This is the magic property: it scales the image to fit the container bounds perfectly while keeping its proportions */
+  
+  object-fit: cover; 
+  object-position: center center; 
 }
