@@ -58,7 +58,7 @@ function App() {
         </section>
         
       </div>
-      
+      <Footer />
     </div>
   );
 }
