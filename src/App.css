@@ -110,74 +110,6 @@ section, #about-us, #schedule, #faq, #register {
   box-sizing: border-box;
 }
 
-.tent-wrapper {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  max-width: 3000px; /* Matches the tent's max width */
-  margin-top: -40px;    /* Pulls group closer to the logo */
-  margin-bottom: -30px; /* Pulls countdown closer to the group */
-  z-index: 1;
-}
-
-/* Styles and enlarges the carnival house */
-.tent-image {
-  width: 100%;
-  max-width: 2000px; 
-  height: auto;
-  margin-top: -175px;    
-  margin-bottom: -30px; 
-  position: relative;
-  z-index: 1;
-  display: block;
-}
-
-.tent-container {
-  display: flex;
-  align-items: center;       
-  justify-content: center;   
-  /* Remove the gap property so we can control spacing with negative margins */
-  margin: 40px 0;            
-}
-
-/* Positions the arrow to the left of the tent */
-/* Wrapper to hold both the image and the text */
-.arrow-wrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  
-  /* Move the negative margin and z-index to the wrapper */
-  margin-right: -250px; 
-  z-index: 2; 
-}
-
-.arrow-image {
-  width: 300px; 
-  height: auto;
-  object-fit: contain;
-}
-
-/* Positions the text exactly in the center of the arrow */
-.arrow-text {
-  position: absolute;
-  font-family: var(--heading);
-  color: var(--text-h); /* Matches your dark red header text */
-  font-size: 22px;
-  text-align: center;
-  line-height: 1.1;
-  
-  /* Optional: Adjust these values if the text isn't perfectly centered on your specific arrow graphic */
-  top: 50%;
-  left: 50%;
-  transform: translate(-60%, -50%);
-  
-  pointer-events: none; /* Ensures the text doesn't block clicking if you make the arrow a link later */
-}
-/* Position the ticket link over the tent */
 /* Restrict the clickable area to exactly the size of the ticket */
 .register-ticket-link {
   position: absolute;
@@ -205,4 +137,19 @@ section, #about-us, #schedule, #faq, #register {
   height: auto;
   display: block; /* Removes inline spacing ghost pixels */
   filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.25)); 
+}
+
+.landing-image-container {
+  width: 100%;
+  height: calc(100vh - 80px); 
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Centers the image vertically in the available space */
+  overflow: hidden; /* Prevents any accidental scrollbars */
+}
+
+.landing-full-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* This is the magic property: it scales the image to fit the container bounds perfectly while keeping its proportions */
 }
