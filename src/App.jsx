@@ -2,6 +2,8 @@ import React from 'react';
 import ticketBg from './assets/ticket-tab.png'; 
 import landingBg from './assets/landing-page.png'; 
 import scrollBg from './assets/scrolling-page.png';
+import registerArrow from './assets/register-arrow.gif'; 
+import registerTicket from './assets/register-ticket.png';
 import Countdown from './components/Countdown';
 import Schedule from './components/Schedule';
 import AboutUs from './components/AboutUs';
@@ -36,6 +38,20 @@ function App() {
       {/* 2. NEW LANDING DESIGN */}
       <section className="landing-image-container">
         <img src={landingBg} alt="Ticket to Hack 2026" className="landing-full-image" />
+
+        {/* THE ANIMATED ARROW */}
+        <img src={registerArrow} alt="Point to register" className="register-arrow" />
+        
+        {/* THE CLICKABLE TICKET */}
+        <a 
+          href="https://tally.so/r/vG7bYX" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="register-ticket-link"
+        >
+          <img src={registerTicket} alt="Register Here" className="register-ticket-image" />
+        </a>
+
       </section>
         
       {/* 3. SCROLLABLE CONTENT SECTIONS WITH BACKGROUND */}

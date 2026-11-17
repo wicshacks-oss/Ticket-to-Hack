@@ -147,9 +147,10 @@ section, #about-us, #schedule, #faq, #register {
 .register-ticket-link {
   position: absolute;
   z-index: 10;
-  top: 65%; 
-  left: 50%;
+  top: 90%;  /* Adjust this up or down to center it on the house doors */
+  left: 50.5%;
   transform: translate(-50%, -50%);
+  transition: transform 0.2s ease;
   transition: transform 0.2s ease;
   cursor: pointer;
   
@@ -166,14 +167,25 @@ section, #about-us, #schedule, #faq, #register {
 }
 
 .register-ticket-image {
-  width: 700px; /* Change this to resize the ticket itself */
+  width: 100%; /* Change this to resize the ticket itself */
   height: auto;
-  display: block; /* Removes inline spacing ghost pixels */
-  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.25)); 
+  display: block; 
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.25));
 }
 
-.landing-image-container {
+.register-arrow {
+  position: absolute;
+  top: 55%; /* Places it above the ticket */
+  left: 30%;
+  transform: translateX(-50%) rotate(25deg);
+  width: 15%; /* Adjust the arrow size here */
+  z-index: 10;
+  mix-blend-mode: multiply;
 
+}  
+
+.landing-image-container {
+  position: relative; 
   flex: 1;
   width: 100%;
   height: calc(100vh - 80px);
@@ -195,6 +207,7 @@ section, #about-us, #schedule, #faq, #register {
   object-fit: cover; 
   object-position: center center; 
 }
+
 
 @media (max-width: 900px) {
   /* --- Header Fixes --- */
