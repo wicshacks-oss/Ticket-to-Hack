@@ -1,12 +1,16 @@
 import React from 'react';
 import ticketBg from './assets/ticket-tab.png'; 
-// Importing the specific file from your screenshot
 import landingBg from './assets/landing-page.png'; 
+import scrollBg from './assets/scrolling-page.png';
+import Countdown from './components/Countdown';
+import Schedule from './components/Schedule';
+import AboutUs from './components/AboutUs';
+import FAQ from './components/FAQ';
 import './App.css';
 
 function App() {
   return (
-    <div>
+    <div className="app-container">
       {/* 1. STICKY HEADER & TABS */}
       <header className="sticky-header">
         <span className="header-title">Ticket to Hack</span>
@@ -31,7 +35,28 @@ function App() {
       <section className="landing-image-container">
         <img src={landingBg} alt="Ticket to Hack 2026" className="landing-full-image" />
       </section>
+        
+      {/* 3. SCROLLABLE CONTENT SECTIONS WITH BACKGROUND */}
+      <div className="scrolling-content-bg">        
+        {/* Placed Countdown at the top of the scrolling section */}
+        <div className="countdown-wrapper">
+          <Countdown />
+        </div>
 
+        <section id="schedule" className="content-section">
+          <Schedule />
+        </section>
+        
+        <section id="about-us" className="content-section">
+          <AboutUs />
+        </section>
+
+        <section id="faq" className="content-section">
+          <FAQ />
+        </section>
+        
+      </div>
+      
     </div>
   );
 }
